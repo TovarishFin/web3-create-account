@@ -1,0 +1,15 @@
+{
+  "name": "make-ethereum-account",
+  "version": "1.0.0",
+  "description": "an example to make an ethereum account",
+  "main": "''",
+  "author": "TovarishFin",
+  "license": "MIT",
+  "dependencies": {
+    "bignumber.js": "^7.0.1",
+    "chalk": "^2.4.1",
+    "ethereumjs-tx": "^1.3.4",
+    "web3": "^1.0.0-beta.34",
+    "yargs": "^11.0.0"
+  }
+}

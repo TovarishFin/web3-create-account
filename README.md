@@ -2,6 +2,8 @@
 This repo serves as an example on how to create ethereum accounnts using the 1.0.0 version of web3. This is meant to be a starting point for knowing how to use web3 for some basic account functionality.
 
 ## usage
+
+### from node
 This repo uses yargs and runs on node. It runs on node because this is a quicker and easier way of showcasing this functionality rather than in the browser with a GUI.
 
 To use clone the directory and enter the directory. Usage can be found by typing:
@@ -22,6 +24,25 @@ node accounts.js decrypt --help
 ```
 node accounts.js transfer --help
 ```
+
+### from browser
+1. run: `yarn build`
+1. then run: `yarn start`
+1. go to: `http://localhost:8080` in your browser
+1. open up browser console
+1. try these commands:
+    * `createAccount(password)`
+    * `decryptAccount(password, quiet)`
+    * `transferNoobCoin(password, receiver, amount)`
+    * `getBalance(address)`
+
+In the browser commands params are not given as a single `argv` object, but instead as different individual parameters.
+
+In order for this to run, it needs to be served up rather than from a local file due to CORS issues. There might be a work around for this, but I couldn't find one in such a short timeframe.
+
+In order to handle dependencies, webpack is used to build the single import file.
+
+Encrypted accounts are stored in localstorage.
 
 ### create
 `create` creates a new ethereum account and writes the encryped private key to disk. 

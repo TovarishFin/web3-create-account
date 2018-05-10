@@ -21,6 +21,8 @@ const createAccount = (password) => {
   // encrypt the newly created account private key using given password
   const encryptedAccount = web3.eth.accounts.encrypt(account.privateKey, password)
   localStorage.setItem('encryptedWallet', JSON.stringify(encryptedAccount))
+
+  return encryptedAccount
 }
 
 // decrypts an encrypted private key at a given location using given password
@@ -93,8 +95,12 @@ const transferNoobCoin = async (password, receiver, amount) => {
 
     console.log(`tx ${sentTx.transactionHash} has executed successfully`)
     console.log(`https://rinkeby.etherscan.io/tx/${sentTx.transactionHash}`)
+
+    return sentTx
   } catch (err) {
     console.error(`🔥  An error has occured: ${err}`)
+
+    return err
   }
 }
 
@@ -104,7 +110,7 @@ const getBalance = async address => {
   console.log(`the token balance in wei units is: ${balance.toString()}`)
   console.log(`the balance in ether units is: ${balance.div('1e18').toString()}`)
 
-  return balance.toString()
+  return balance
 }
 
 window.createAccount = createAccount

@@ -2,9 +2,8 @@ const path = require('path')
 
 module.exports = {
   entry: './browserAccounts.js',
-  watch: true,
   output: {
-    path: path.resolve(__dirname, 'public'), 
+    path: __dirname, 
     filename: 'accounts.dist.js'
   },
 }

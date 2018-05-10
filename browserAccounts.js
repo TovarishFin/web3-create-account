@@ -7,8 +7,10 @@ import BigNumber from 'bignumber.js'
 
 // previous project smart contract on rinkeby testnet. All addresses start with 100e18 NoobCoin tokens
 const noobCoinAddress = '0xd682fedb50f8d895c940bcac39472b0fd10966ab'
+// put your own infura API key here if you want... though it should not be needed
+const infuraKey = null;
 // setup web3 to use infura node using rinkeby testnet
-const web3 = new Web3('https://rinkeby.infura.io')
+const web3 = new Web3(`https://rinkeby.infura.io/${infuraKey}`)
 // contract definition used in order to "talk" to it
 import NoobCoin from './NoobCoin'
 // instantiate contract using definition at address

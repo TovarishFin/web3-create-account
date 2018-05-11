@@ -27,8 +27,7 @@ node accounts.js transfer --help
 
 ### from browser
 1. run: `yarn build`
-1. then run: `yarn start`
-1. go to: `http://localhost:8080` in your browser
+1. open `index.html` in your browser
 1. open up browser console
 1. try these commands:
     * `createAccount(password)`
@@ -43,6 +42,8 @@ In order for this to run, it needs to be served up rather than from a local file
 In order to handle dependencies, webpack is used to build the single import file.
 
 Encrypted accounts are stored in localstorage.
+
+If you are having trouble with infura, try setting `infuraKey` to an API key from them. It should work without it though.
 
 ### create
 `create` creates a new ethereum account and writes the encryped private key to disk. 
